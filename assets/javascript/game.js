@@ -10,11 +10,11 @@ var charObjects = {};
 for(var i=0; i<characters.length;i++){
 	charObjects[characters[i]]={};//creation of new character objects within charObjects - each will be called a character name in characters array
 	charObjects[characters[i]].name=characters[i];//gives name to character object
-	charObjects[characters[i]].picture="assets/images/" + characters[i] + ".jpg"; //sets path for picture of character
-	charObjects[characters[i]].backgroundImage="assets/images/" + characters[i] + " background.jpg";//sets path for background picture for background
-	charObjects[characters[i]].victoryPic="assets/images/" + characters[i] + "_victory.jpg";//sets path for victory picture for character
-	charObjects[characters[i]].sound_attack="assets/sounds/" + characters[i] + "_attack.mp3";//sets path for attack sound for character
-	charObjects[characters[i]].sound_greeting="assets/sounds/" + characters[i] + "_greeting.mp3";//sets path for greeting sound for character
+	charObjects[characters[i]].picture="../images/" + characters[i] + ".jpg"; //sets path for picture of character
+	charObjects[characters[i]].backgroundImage="../images/" + characters[i] + " background.jpg";//sets path for background picture for background
+	charObjects[characters[i]].victoryPic="../images/" + characters[i] + "_victory.jpg";//sets path for victory picture for character
+	charObjects[characters[i]].sound_attack="../sounds/" + characters[i] + "_attack.mp3";//sets path for attack sound for character
+	charObjects[characters[i]].sound_greeting="../sounds/" + characters[i] + "_greeting.mp3";//sets path for greeting sound for character
 	charObjects[characters[i]].healthPoints_orig=100+10*i;//sets original health for character
 	charObjects[characters[i]].healthPoints_curr=100+10*i;//sets current health for character - this will change through gameplay
 	charObjects[characters[i]].attackPower_origin=6+6*i;//sets original attack power for character
@@ -157,7 +157,7 @@ $("#opponents>.container_opponent>button").on("click",function(){
 })
 
 $("#startGame").on("click",function(){
-	audioElement_song.attr("src", "assets/sounds/fight song.mp3");
+	audioElement_song.attr("src", "../sounds/fight song.mp3");
 	audioElement_song.get(0).play();
 	$("#startGame").css("visibility","hidden");
 	$("#attack").css("display","inline");
@@ -231,7 +231,7 @@ setUpModal = function(result){
 		$("#myModal").modal("show");
 	} else if(result==="win" && charObjects[currPlayer].healthPoints_curr <= 0){
 		var image=$("<img>");
-		image.attr("src","assets/images/choose new character.jpg");
+		image.attr("src","../images/choose new character.jpg");
 		$(".modal-body").append(image);
 		$(".modal-body>img").css("height","400px");
 		$(".modal-footer>.result").html("Restart Game");
@@ -292,7 +292,7 @@ $(".modal-footer>.result").on("click",function(){
 			$(".modal-header>h1").remove();
 			$("#opponents>p").css("display","none");
 			fadeSequence(".container_opponent",1);
-			$("body").css("backgroundImage","url(\"assets/images/Super Smash Brothers Background.png\")");
+			$("body").css("backgroundImage","url(\"../images/Super Smash Brothers Background.png\")");
 			$("#opponents>.container_opponent>button").prop("disabled",false);
 		} else if($(".modal-footer>.result").attr("result")==="choose"){
 			$(".jumbotron").css("visibility","hidden");					
@@ -309,13 +309,13 @@ $(".modal-footer>.result").on("click",function(){
 			fadeSequence(".container_opponent",1);
 			$(".modal-body>img").remove();
 			$(".modal-header>h1").remove();				
-			$("body").css("backgroundImage","url(\"assets/images/Super Smash Brothers Background.png\")");
+			$("body").css("backgroundImage","url(\"../images/Super Smash Brothers Background.png\")");
 			$("#opponents>.container_opponent>button").prop("disabled",false);
 		}
 	} else {
 		$(".modal-body>img").remove();
 		$(".modal-header>h1").remove();					
-		$("body").css("backgroundImage","url(\"assets/images/Super Smash Brothers Background.png\")");
+		$("body").css("backgroundImage","url(\"../images/Super Smash Brothers Background.png\")");
 		usedCharacters=[];
 		$("#restartGame").css("visibility","visible");
 		$("#opponents>p").css("display","none");
