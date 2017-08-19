@@ -1,0 +1,270 @@
+body{
+	background:url("../images/Super Smash Brothers Background.png") no-repeat center center fixed;
+	background-size:cover;
+}
+
+.jumbotron{
+	padding:12px 12px 12px 12px;
+	width:100%;
+	visibility:hidden;	
+	background-color:#575757;	
+	border:5px solid #600000;
+	margin: 15px 0px 10px;
+	animation:borderGlow 8s;
+	animation-iteration-count: infinite;
+}
+
+@keyframes borderGlow{
+	0%{
+		border-color:#600000;
+	}
+	50%{
+		border-color:#fff;
+	}
+	100%{
+		border-color:#600000;
+	}
+}
+
+.container .jumbotron{
+	border-radius:60px;
+}
+
+.jumbotron>h1{
+	font-family:Nintendo;
+	font-size:80px;
+	padding:0px;
+	border:0px;
+	margin:0px;
+	text-align:center;
+	font-weight:bold;
+	background: #600000 -webkit-gradient(linear, 100% 0, 0 0, from(#acacac), color-stop(0.5, #ffffff), to(#600000));
+	background-position: -4rem top;
+	background-repeat: no-repeat;
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	animation-name: shimmer;
+	animation-duration: 40s;
+	animation-iteration-count: infinite;
+	background-size: 4rem 100%;
+}
+
+@keyframes shimmer {
+    0% {
+        background-position: -4rem top; /*50px*/
+    }
+
+    100% {
+        background-position: 1500rem top; /*200px*/
+    }
+}
+
+div.container_player,div.container_opponent{
+	position:relative;
+	height:50px;
+	margin-bottom:10px;
+}
+
+div.container_opponent{
+	display:none;
+}
+
+#choose>.container_player>button,
+#opponents>.container_opponent>button{
+	position:absolute;
+	z-index:1;
+	width:100%;
+	border-radius:30px;
+	background-color:#278AA2;
+}
+
+#opponents>.container_opponent>button{
+	background-color:#B9121B;
+}
+
+#choose>p,#opponents>p {
+	text-align:center;
+	color:white;
+	font-size:20px;
+	font-weight:bold;
+	line-height:40px;
+	background-color:#263248;
+	border-radius:30px;
+	border:2px solid white;
+	white-space:nowrap;
+}
+
+#opponents>p{
+	display:none;
+	height:40px;
+	background-color:#500000;
+}
+
+img{
+	border-radius:30px;
+	margin-left:0px;
+	float:left;
+	width:100%;
+}
+
+#choose>.container_player>div,
+#opponents>.container_opponent>div{
+	margin-top:7px;
+	position:absolute;
+	z-index:0;
+	text-align:center;
+	width:100%;
+	line-height:90%;
+	padding:2px;
+	background-color:#263248;
+	color:white;
+	border-radius:30px;
+	border:3px solid #fff;
+	opacity:0.0;
+}
+
+#opponents>.container_opponent>div{
+	background-color:#500000;
+}
+
+#player>button,#opponent>button{
+	background-color:#183128;
+	display:none;
+	border-radius:30px;
+}
+
+#opponent>button{
+	background-color:#990D1E;
+}
+
+#player,#opponent,#actions{
+	top:170px;
+}
+
+	#opponents>button{
+	display:none;
+	width:100%;
+	border-radius:30px;
+	background-color:#B9121B;
+}
+
+#startGame,#restartGame{
+	visibility:hidden;
+	border-radius:30px;
+	font-size:30px;
+	background-color:#C41127;
+	color:#fff;
+	border:3px solid #fff;
+	animation:buttonAnimation 5s;
+	animation-iteration-count:infinite;
+}
+
+@keyframes buttonAnimation{
+	0%{
+		background-color:#C41127;
+		color:#fff;
+		border:3px solid #fff;
+	}
+	15%{
+		background-color:#FFD800;
+		color:#C41127;
+		border:3px solid #C41127;
+	}
+	30%{
+		background-color:#278AA2;
+		color:#C41127;
+		border:3px solid #C41127;
+	}
+	45%{
+		background-color:#297509;
+		color:#C41127;
+		border:3px solid #C41127;
+	}
+	60%{
+		background-color:#7E1135;
+		color:#C41127;
+		border:3px solid #C41127;
+	}
+	75%{
+		background-color:#FFD800;
+		color:#C41127;
+		border:3px solid #C41127;
+	}
+	90%{
+		background-color:#297509;
+		color:#C41127;
+		border:3px solid #C41127;
+	}
+	100%{
+		background-color:#C41127;
+		color:#fff;
+		border:3px solid #fff;
+	}
+}
+
+@font-face{
+	font-family:"Nintendo";
+	src:url("../font/SNES Italic.ttf");
+}
+
+#attack{
+	color:#fff;
+	border:2px solid #fff;
+	font-size:20px;
+	animation:colorTrans 1.5s;
+	animation-iteration-count: infinite;
+	margin-left:auto;
+	margin-right:auto;
+	width:100%;
+}
+
+@keyframes colorTrans{
+	0%{
+		color:#fff;
+		border:2px solid #fff;
+	}
+	25%{
+		color:red;
+		border:2px solid red;
+	}
+	75%{
+		color:#fff;
+		border:2px solid #fff;
+	}
+}
+
+@media (max-width:1010px){
+	.jumbotron>h1{
+		font-size:50px;
+	}
+}
+
+@media (max-width:960px){
+	#choose>p,#opponent>p{
+		font-size:10px;
+	}
+	#startGame{
+		font-size:15px;
+	}
+}
+
+.stats{
+	background-color:green;
+	border-radius:25px;
+	border:2px solid white;
+	display:none;
+}		
+
+.stats>p{
+	display:none;
+	color:white;
+	text-align:center;
+}
+
+#player>.stats{
+	background-color: #183128;
+}
+
+#opponent>.stats{
+	background-color: #990D1E;
+}

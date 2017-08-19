@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link href="assets/css/reset.css">
+	<script src="https://code.jquery.com/jquery.js"></script>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+	<link href="https://fonts.googleapis.com/css?family=Merriweather" rel="stylesheet">
+	<script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
+	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+</head>
+<body>
+
+	<div class="container">
+
+		<div class="jumbotron">
+			<h1>Super Smash Brothers Web Game!</h1>
+		</div>
+		<div class="col-xs-2 col-sm-2 col-md-4 col-lg-2" id="choose">
+			<p>Choose player:</p>
+			<!--inserts divs that will have 3d transformation on hover. 3d transformation will be on button and will show text behind it-->
+			<!--buttons will appear here - they'll have ids of pattern button#-->
+		</div>
+		<div class="col-xs-offset-1 col-sm-offset-1 col-md-offset-1 col-lg-offset-1 col-xs-2 col-sm-2 col-md-4 col-lg-2" id="player">
+			<button id="chosenPlayer"></button>
+			<button id="attack" data-target="#myModal">Attack!</button>
+			<div class="stats">
+				<p id="numWins_player">Number of Wins: </p>
+				<p id="numLosses_player">Number of Losses: </p>
+				<p id="healthPoints_player">Health Points: </p>
+				<p id="attackPower_player">Current Attack: </p>
+			</div>
+		</div>
+		<div class="col-xs-1 col-sm-1 col-md-1 col-lg-1" id="actions">
+			<button id = "startGame">Play!</button>
+			<button id = "restartGame">Restart</button>
+		</div>
+		<div class="col-xs-2 col-sm-2 col-md-4 col-lg-2" id="opponent">
+			<button id="chosenOpponent"></button>
+			<div class="stats">
+				<p id="numWins_opponent">Number of Wins: </p>
+				<p id="numLosses_opponent">Number of Losses: </p>
+				<p id="healthPoints_opponent">Health Points: </p>
+				<p id="counterAttackPower_opponent">Counter Attack: </p>
+			</div>
+			
+		</div>
+		<div class="col-xs-2 col-sm-2 col-md-4 col-lg-2 col-xs-offset-1 col-sm-offset-1 col-md-offset-1 col-lg-offset-1" id="opponents">
+			<p>Choose opponent:</p>
+			<!--buttons will appear here - they'll have ids of pattern button#_opponent-->
+		</div>
+
+	</div>
+
+	<div id="myModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+	  <div class="modal-dialog" role="document">
+	    <div class="modal-content">
+		    <div class="modal-header"></div>
+		    <div class="modal-body"></div>
+		    <div class="modal-footer">
+				<button type="button" data-dismiss="modal" aria-hidden="true" class="result"></button>
+			</div>
+		</div>
+	  </div>
+	</div>
+	<script type="text/javascript" src="assets/javascript/game.js"></script>
+</body>
+
+
+</html>
